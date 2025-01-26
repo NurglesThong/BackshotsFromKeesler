@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Login</h1>
+    <h1>Register</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
         <div class="mb-3">
@@ -11,6 +11,10 @@
             {{ form.password.label(class="form-label") }}
             {{ form.password(class="form-control") }}
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="mb-3">
+            {{ form.confirm_password.label(class="form-label") }}
+            {{ form.confirm_password(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
     </form>
 {% endblock %}
