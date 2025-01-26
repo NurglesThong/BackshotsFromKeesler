@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from forms import RegistrationForm, LoginForm
 from models import User, db
-from waitress import serve
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -58,5 +57,5 @@ def logout():
 with app.app_context():
     db.create_all()
 
-if __name__ == "__main__":
-    serve(app, host="0.0.0.0", port=8000)
+if __name__ == '__main__':
+    app.run(debug=True)
