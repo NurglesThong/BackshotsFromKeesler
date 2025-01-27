@@ -24,6 +24,8 @@ def load_user(user_id):
 def index():
     return render_template('index.html', user=current_user)
 
+
+# does not work during the first 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
